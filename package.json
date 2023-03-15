@@ -1,0 +1,22 @@
+{
+  "name": "kniffel",
+  "version": "1.0.0",
+  "description": "Textblock für das Spiel Kniffel.",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://AnnaBanan/kniffel.git"
+  },
+  "author": "Anna-Maria Tonke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnaBanan/kniffel/issues"
+  },
+  "homepage": "https://github.com/AnnaBanan/kniffel#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
+}

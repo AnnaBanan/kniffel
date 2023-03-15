@@ -1,0 +1,161 @@
+:root{
+    --border: 1px solid #526d95b5;
+    --border-big: 2px solid #526D95;
+    --border-radius: 4px;
+    --highlight: #eff6ff;
+    --button-color:  #00e6acb3;
+}
+body{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: #333;
+    font-size: 16px;
+    margin: 0 auto;
+}
+.bold{
+    font-weight: bold;
+}
+.border-bottom{
+    border-bottom: var(--border-big) !important;
+}
+.border-rounded{
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+.container{
+    margin: 0 auto;
+    padding: 16px;
+    max-width: 840px;
+}
+.geburtstag{
+    font-size: 28px;
+    margin-bottom: 16px;
+    line-height: 48px;
+    margin-right: 16px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+.header{
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    font-size: 24px;
+    margin-top: 8px;
+}
+.legende{
+    font-weight: 500;
+    border: var(--border);
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+.legende__item{
+    font-size: 14px;
+    width: 72px;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 8px;
+    border-bottom: var(--border);
+}
+.legende__item:nth-child(even){
+    background-color: var(--highlight);
+}
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.spieler{
+    max-width: 124px;
+    border-top: var(--border);
+    border-right: var(--border);
+}
+.feld{
+    border-bottom: var(--border);
+    height: 42px;
+}
+input{
+    padding: 12px;
+    border: 0;
+    width: 100%;
+    height: 42px;
+    text-align: center;
+    background: transparent;
+}
+input:hover:read-write{
+    background-color: var(--highlight);
+}
+input:focus:read-write,
+input:focus-visible:read-write, 
+input:active:read-write{
+    outline: var(--border-big);
+}
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+input::placeholder {
+    text-align: center; 
+    font-size: 12px;
+}
+
+button{
+    padding: 9px;
+    border: 0;
+    border-radius: 999px;
+    min-width: 108px;
+    font-weight: bold;
+    color: #333;
+    background-color: var(--button-color);
+}
+
+.ergebnis{
+    display: block;
+    padding: 12px;
+    border-top: var(--border);
+    border-bottom: var(--border) ;
+    color: grey;
+    height: 42px;
+    line-height: 42px;
+}
+
+/*table*/
+table{
+    margin-bottom: 24px;
+}
+table, th, td {
+    border: thin solid gainsboro;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+th, td {
+    padding:10px;
+}
+@media only screen and (min-width: 768px) {
+    .geburtstag{
+        font-size: 36px;
+    }
+    .header{
+        align-items: start;
+        flex-direction: column;
+        margin-bottom: 24px;
+    }
+    h1{
+        font-size: 40px;
+        margin-top: 16px;
+    }
+    .legende__item{
+        width: 80px;
+        font-size: 16px;
+    }
+}

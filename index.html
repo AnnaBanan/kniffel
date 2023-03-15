@@ -1,0 +1,181 @@
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair_Display">
+        <link rel="shortcut icon" href="./assets/konfetti-32.png" />
+        <link rel="icon" type="image/png" href="./assets/konfetti-32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./assets/konfetti-96.png" sizes="96x96">
+        <meta name="msapplication-TileColor" content="#ffffff">
+       <script defer type="text/javascript" src="index.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="flex header">
+                <h1>Kniffel</h1>
+                <button onclick="refreshPage()">neues Spiel</button>
+            </div>
+            <div class="flex">
+                <div class="legende border-bottom">
+                    <div class="legende__item border-bottom bold">Name</div>
+                    <div class="legende__item">1er</div>
+                    <div class="legende__item">2er</div>
+                    <div class="legende__item">3er</div>
+                    <div class="legende__item">4er</div>
+                    <div class="legende__item">5er</div>
+                    <div class="legende__item border-bottom">6er</div>
+                    <div class="legende__item">oben</div>
+                    <div class="legende__item border-bottom">Bonus</div>
+                    <div class="legende__item">Pasch 3</div>
+                    <div class="legende__item">Pasch 4</div>
+                    <div class="legende__item">Fullhouse</div>
+                    <div class="legende__item">kl Straße</div>
+                    <div class="legende__item">gr Straße</div>
+                    <div class="legende__item">Kniffel</div>
+                    <div class="legende__item border-bottom">Chance</div>
+                    <div class="legende__item ">Ergebnis</div>
+                </div>
+                <div class="flex flex-col spieler border-bottom">
+                    <div class="feld border-bottom bold">
+                        <label for="spieler1"></label>
+                        <input onblur="setPlaceholder('spieler1')" id="spieler1" name="spieler 1 Name" placeholder="Spieler 1 Name" type="text">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_1er"></label>
+                        <input id="spieler1_1er" class="spieler1_oben" name="1er spieler 1" placeholder="1er Spieler 1" type="number" min="0" max="5">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_2er"></label>
+                        <input id="spieler1_2er" class="spieler1_oben" name="2er spieler 1" placeholder="2er Spieler 1" type="number" min="0" max="10">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_3er"></label>
+                        <input id="spieler1_3er" class="spieler1_oben" name="3er spieler 1" placeholder="3er Spieler 1" type="number" min="0" max="15">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_4er"></label>
+                        <input id="spieler1_4er" class="spieler1_oben" name="4er spieler 1" placeholder="4er Spieler 1" type="number" min="0" max="20">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_5er"></label>
+                        <input id="spieler1_5er" class="spieler1_oben" name="5er spieler 1" placeholder="5er Spieler 1" type="number" min="0" max="25">
+                    </div>
+                    <div class="feld border-bottom">
+                        <label for="spieler1_6er"></label>
+                        <input id="spieler1_6er" class="spieler1_oben" name="6er spieler 1" placeholder="6er Spieler 1" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld flex flex-center">
+                        <button id="spieler1_button_oben" onclick="ergebnis_oben('spieler1')">ausrechnen</button>
+                    </div>
+                    <div class="feld border-bottom">
+                        <label for="spieler1_bonus"></label>
+                        <input id="spieler1_bonus" name="bonus spieler 1" placeholder="Bonus" type="number" min="0" max="35" readonly>
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_pasch3"></label>
+                        <input id="spieler1_pasch3" class="spieler1_unten" name="Pasch 3 spieler 1" placeholder="Pasch 3" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_pasch4"></label>
+                        <input id="spieler1_pasch4" class="spieler1_unten" name="Pasch 4 spieler 1" placeholder="Pasch 4" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_fullhouse"></label>
+                        <input id="spieler1_fullhouse" class="spieler1_unten" name="Fullhouse spieler 1" placeholder="Fullhouse" type="number" min="0" max="25">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_klStr"></label>
+                        <input id="spieler1_klStr" class="spieler1_unten" name="kleine Straße spieler 1" placeholder="kl Straße" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_grStr"></label>
+                        <input id="spieler1_grStr" class="spieler1_unten" name="große Straße spieler 1" placeholder="gr Straße" type="number" min="0" max="40">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler1_kniffel"></label>
+                        <input id="spieler1_kniffel" class="spieler1_unten" name="Kniffel spieler 1" placeholder="Kniffel" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld border-bottom">
+                        <label for="spieler1_chance"></label>
+                        <input id="spieler1_chance" class="spieler1_unten" name="Chance spieler 1" placeholder="Chance" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld flex flex-center">
+                        <button id="spieler1_button" onclick="ergebnisSpieler('spieler1')">ausrechnen</button>
+                    </div>
+                </div>
+                <div class="flex flex-col spieler border-rounded border-bottom">
+                    <div class="feld border-bottom bold">
+                        <label for="spieler2"></label>
+                        <input onblur="setPlaceholder('spieler2')" id="spieler2" name="spieler 2 Name" placeholder="Spieler 2 Name" type="text">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_1er"></label>
+                        <input id="spieler2_1er" class="spieler2_oben" name="1er spieler 2" placeholder="1er Spieler 2" type="number" min="0" max="5">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_2er"></label>
+                        <input id="spieler2_2er" class="spieler2_oben" name="2er spieler 2" placeholder="2er Spieler 2" type="number" min="0" max="10">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_3er"></label>
+                        <input id="spieler2_3er" class="spieler2_oben" name="3er spieler 2" placeholder="3er Spieler 2" type="number" min="0" max="15">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_4er"></label>
+                        <input id="spieler2_4er" class="spieler2_oben" name="4er spieler 2" placeholder="4er Spieler 2" type="number" min="0" max="20">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_5er"></label>
+                        <input id="spieler2_5er" class="spieler2_oben" name="5er spieler 2" placeholder="5er Spieler 2" type="number" min="0" max="25">
+                    </div>
+                    <div class="feld border-bottom">
+                        <label for="spieler2_6er"></label>
+                        <input id="spieler2_6er" class="spieler2_oben" name="6er spieler 2" placeholder="6er Spieler 2" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld flex flex-center">
+                        <button id="spieler2_button_oben" onclick="ergebnis_oben('spieler2')">ausrechnen</button>
+                    </div>
+                    <div class="feld border-bottom">
+                        <label for="spieler2_bonus"></label>
+                        <input id="spieler2_bonus" name="bonus spieler 1" placeholder="Bonus" type="number" min="0" max="35" readonly>
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_pasch3"></label>
+                        <input id="spieler2_pasch3" class="spieler2_unten" name="Pasch 3 spieler 2" placeholder="Pasch 3" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_pasch4"></label>
+                        <input id="spieler2_pasch4" class="spieler2_unten" name="Pasch 4 spieler 2" placeholder="Pasch 4" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_fullhouse"></label>
+                        <input id="spieler2_fullhouse" class="spieler2_unten" name="Fullhouse spieler 2" placeholder="Fullhouse" type="number" min="0" max="25">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_klStr"></label>
+                        <input id="spieler2_klStr" class="spieler2_unten" name="kleine Straße spieler 2" placeholder="kl Straße" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_grStr"></label>
+                        <input id="spieler2_grStr" class="spieler2_unten" name="große Straße spieler 2" placeholder="gr Straße" type="number" min="0" max="40">
+                    </div>
+                    <div class="feld">
+                        <label for="spieler2_kniffel"></label>
+                        <input id="spieler2_kniffel" class="spieler2_unten" name="Kniffel spieler 2" placeholder="Kniffel" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld border-bottom">
+                        <label for="spieler2_chance"></label>
+                        <input id="spieler2_chance" class="spieler2_unten" name="Chance spieler 2" placeholder="Chance" type="number" min="0" max="30">
+                    </div>
+                    <div class="feld flex flex-center">
+                        <button id="spieler2_button" onclick="ergebnisSpieler('spieler2')">ausrechnen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
