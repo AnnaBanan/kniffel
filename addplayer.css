@@ -1,0 +1,14 @@
+.addplayer input[type="text"] {
+  padding: 9px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 12px;
+}
+.addplayer input::placeholder {
+  text-align: left;
+  font-size: 12px;
+}

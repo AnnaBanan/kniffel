@@ -3,6 +3,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="addplayer.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair_Display">
         <link rel="shortcut icon" href="./assets/konfetti-32.png" />
@@ -15,8 +16,15 @@
     <body>
         <div class="container">
             <div class="flex header">
-                <h1>Kniffel</h1>
-                <button onclick="refreshPage()">neues Spiel</button>
+                <div class="flex flex-center gap-70">
+                    <h1>Kniffel</h1>
+                    <button onclick="refreshPage()">neues Spiel</button>
+                </div>
+                <div class="addplayer">
+                    <label for="neuerSpieler"></label>
+                    <input id="neuerSpieler" name="Spieler eintragen" placeholder="Spieler Name" type="text">
+                    <button onclick="addPlayer()">Spieler hinzufügen</button>
+                </div>
             </div>
             <div class="flex">
                 <div class="legende border-bottom">
@@ -106,7 +114,7 @@
                         <button id="spieler1_button" onclick="ergebnisSpieler('spieler1')">ausrechnen</button>
                     </div>
                 </div>
-                <div class="flex flex-col spieler border-rounded border-bottom">
+                <div id="players" class="flex flex-col spieler border-bottom">
                     <div class="feld border-bottom bold">
                         <label for="spieler2"></label>
                         <input onblur="setPlaceholder('spieler2')" id="spieler2" name="spieler 2 Name" placeholder="Spieler 2 Name" type="text">
@@ -174,6 +182,7 @@
                         <button id="spieler2_button" onclick="ergebnisSpieler('spieler2')">ausrechnen</button>
                     </div>
                 </div>
+                <!-- border-rounded should be added to last player-->
             </div>
         </div>
 
