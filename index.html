@@ -26,7 +26,7 @@
                     <button onclick="addPlayer()">Spieler hinzufügen</button>
                 </div>
             </div>
-            <div class="flex">
+            <div class="flex" id="players">
                 <div class="legende border-bottom">
                     <div class="legende__item border-bottom bold">Name</div>
                     <div class="legende__item">1er</div>
@@ -114,7 +114,7 @@
                         <button id="spieler1_button" onclick="ergebnisSpieler('spieler1')">ausrechnen</button>
                     </div>
                 </div>
-                <div id="players" class="flex flex-col spieler border-bottom">
+                <div class="flex flex-col spieler border-bottom">
                     <div class="feld border-bottom bold">
                         <label for="spieler2"></label>
                         <input onblur="setPlaceholder('spieler2')" id="spieler2" name="spieler 2 Name" placeholder="Spieler 2 Name" type="text">

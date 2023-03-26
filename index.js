@@ -76,7 +76,10 @@ function addPlayer() {
       <button id="spieler${spielerAnzahl}_button" onclick="ergebnisSpieler('spieler${spielerAnzahl}')">ausrechnen</button>
   </div>
 </div>`;
-  document.getElementById("players").insertAdjacentHTML("afterend", html);
+  const node = document.createElement("div");
+  document.getElementById("players").appendChild(node);
+  node.outerHTML = html;
+  document.getElementById("neuerSpieler").value = "";
 }
 
 function setPlaceholder(spieler) {
