@@ -126,9 +126,19 @@ function ergebnisSpieler(spieler) {
   let spielerErgebnis_unten = 0;
   let spieler_unten = document.getElementsByClassName(`${spieler}_unten`);
   for (let i = 0; i < spieler_unten.length; i++) {
-    if (parseFloat(spieler_unten[i].value))
+    if (parseFloat(spieler_unten[i].value)) {
       spielerErgebnis_unten += parseFloat(spieler_unten[i].value);
+    }
   }
+
+  const selectedRadios = document.querySelectorAll(
+    'input[type="radio"]:checked'
+  );
+  selectedRadios.forEach(function (radio) {
+    if (parseFloat(radio.value)) {
+      spielerErgebnis_unten += parseFloat(radio.value);
+    }
+  });
 
   let spielerErgebnis =
     parseInt(ergebnisOben) +
