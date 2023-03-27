@@ -11,7 +11,7 @@ function addPlayer() {
   let html = `<div class="flex flex-col spieler border-bottom">
   <div class="feld border-bottom bold">
       <label for="spieler${spielerAnzahl}"></label>
-      <input onblur="setPlaceholder('spieler${spielerAnzahl}')" id="spieler${spielerAnzahl}" name="${spielerName}" placeholder="${spielerName}" type="text">
+      <input onblur="setPlaceholder('spieler${spielerAnzahl}')" id="spieler${spielerAnzahl}" name="${spielerName}" value="${spielerName}" type="text">
   </div>
   <div class="feld">
       <label for="spieler${spielerAnzahl}_1er"></label>
