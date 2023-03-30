@@ -52,21 +52,61 @@ function addPlayer() {
       <label for="spieler${spielerAnzahl}_pasch4"></label>
       <input id="spieler${spielerAnzahl}_pasch4" class="spieler${spielerAnzahl}_unten" name="Pasch 4 Spieler ${spielerAnzahl}" placeholder="Pasch 4" type="number" min="0" max="30">
   </div>
-  <div class="feld">
-      <label for="spieler${spielerAnzahl}_fullhouse"></label>
-      <input id="spieler${spielerAnzahl}_fullhouse" class="spieler${spielerAnzahl}_unten" name="Fullhouse Spieler ${spielerAnzahl}" placeholder="Fullhouse" type="number" min="0" max="25">
+    <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
+    <input type="radio" id="spieler${spielerAnzahl}_fullhouse_check" name="Fullhouse Spieler ${spielerAnzahl}" value="25">
+    <label for="spieler${spielerAnzahl}_fullhouse_check">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-check" />
+        </svg>
+    </label>
+    <input type="radio" id="spieler${spielerAnzahl}_fullhouse_fail" name="Fullhouse Spieler ${spielerAnzahl}" value="0">
+    <label for="spieler${spielerAnzahl}_fullhouse_fail">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-decline" />
+        </svg>
+    </label>
   </div>
-  <div class="feld">
-      <label for="spieler${spielerAnzahl}_klStr"></label>
-      <input id="spieler${spielerAnzahl}_klStr" class="spieler${spielerAnzahl}_unten" name="kleine Straße Spieler ${spielerAnzahl}" placeholder="kl Straße" type="number" min="0" max="30">
+  <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
+    <input type="radio" id="spieler${spielerAnzahl}_klStr_check" name="kleine Straße Spieler ${spielerAnzahl}" value="30">
+    <label for="spieler${spielerAnzahl}_klStr_check">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-check" />
+        </svg>
+    </label>
+    <input type="radio" id="spieler${spielerAnzahl}_klStr_fail" name="kleine Straße Spieler ${spielerAnzahl}" value="0">
+    <label for="spieler${spielerAnzahl}_klStr_fail">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-decline" />
+        </svg>
+    </label>
   </div>
-  <div class="feld">
-      <label for="spieler${spielerAnzahl}_grStr"></label>
-      <input id="spieler${spielerAnzahl}_grStr" class="spieler${spielerAnzahl}_unten" name="große Straße Spieler ${spielerAnzahl}" placeholder="gr Straße" type="number" min="0" max="40">
+  <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
+    <input type="radio" id="spieler${spielerAnzahl}_grStr_check" name="große Straße Spieler ${spielerAnzahl}" value="40">
+    <label for="spieler${spielerAnzahl}_grStr_check">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-check" />
+        </svg>
+    </label>
+    <input type="radio" id="spieler${spielerAnzahl}_grStr_fail" name="große Straße Spieler ${spielerAnzahl}" value="0">
+    <label for="spieler${spielerAnzahl}_grStr_fail">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-decline" />
+        </svg>
+    </label>
   </div>
-  <div class="feld">
-      <label for="spieler${spielerAnzahl}_kniffel"></label>
-      <input id="spieler${spielerAnzahl}_kniffel" class="spieler${spielerAnzahl}_unten" name="Kniffel Spieler ${spielerAnzahl}" placeholder="Kniffel" type="number" min="0" max="30">
+  <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
+    <input type="radio" id="spieler${spielerAnzahl}_kniffel_check" name="Kniffel Spieler ${spielerAnzahl}" value="50">
+    <label for="spieler${spielerAnzahl}_kniffel_check">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-check" />
+        </svg>
+    </label>
+    <input type="radio" id="spieler${spielerAnzahl}_kniffel_fail" name="Kniffel Spieler ${spielerAnzahl}" value="0">
+    <label for="spieler${spielerAnzahl}_kniffel_fail">
+        <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
+            <use href="#icon-decline" />
+        </svg>
+    </label>
   </div>
   <div class="feld border-bottom">
       <label for="spieler${spielerAnzahl}_chance"></label>
@@ -132,7 +172,7 @@ function ergebnisSpieler(spieler) {
   }
 
   const selectedRadios = document.querySelectorAll(
-    'input[type="radio"]:checked'
+    `.${spieler}_unten input[type="radio"]:checked`
   );
   selectedRadios.forEach(function (radio) {
     if (parseFloat(radio.value)) {
