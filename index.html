@@ -21,7 +21,7 @@
                 <button onclick="refreshPage()">neues Spiel</button>
             </div>
             <div class="addplayer">
-                <h3>Mehr als zwei Spieler?</h3>
+                <h3>Wer spielt mit?</h3>
                 <label for="neuerSpieler"></label>
                 <input id="neuerSpieler" name="Spieler eintragen" placeholder="Spieler Name" type="text">
                 <button onclick="addPlayer()">Spieler hinzufügen</button>
@@ -50,245 +50,245 @@
             <div class="flex flex-col spieler border-bottom">
                 <div class="feld border-bottom bold">
                     <label for="spieler1"></label>
-                    <input onblur="setPlaceholder('spieler1')" id="spieler1" name="spieler 1 Name"
+                    <input disabled onblur="setPlaceholder('spieler1')" id="spieler1" name="spieler 1 Name"
                         placeholder="Spieler 1 Name" type="text">
                 </div>
                 <div class="feld">
                     <label for="spieler1_1er"></label>
-                    <input id="spieler1_1er" class="spieler1_oben" name="1er spieler 1" placeholder="1er Spieler 1"
+                    <input disabled id="spieler1_1er" class="spieler1_oben" name="1er spieler 1" placeholder="1er Spieler 1"
                         type="number" min="0" max="5">
                 </div>
                 <div class="feld">
                     <label for="spieler1_2er"></label>
-                    <input id="spieler1_2er" class="spieler1_oben" name="2er spieler 1" placeholder="2er Spieler 1"
+                    <input disabled id="spieler1_2er" class="spieler1_oben" name="2er spieler 1" placeholder="2er Spieler 1"
                         type="number" min="0" max="10">
                 </div>
                 <div class="feld">
                     <label for="spieler1_3er"></label>
-                    <input id="spieler1_3er" class="spieler1_oben" name="3er spieler 1" placeholder="3er Spieler 1"
+                    <input disabled id="spieler1_3er" class="spieler1_oben" name="3er spieler 1" placeholder="3er Spieler 1"
                         type="number" min="0" max="15">
                 </div>
                 <div class="feld">
                     <label for="spieler1_4er"></label>
-                    <input id="spieler1_4er" class="spieler1_oben" name="4er spieler 1" placeholder="4er Spieler 1"
+                    <input disabled id="spieler1_4er" class="spieler1_oben" name="4er spieler 1" placeholder="4er Spieler 1"
                         type="number" min="0" max="20">
                 </div>
                 <div class="feld">
                     <label for="spieler1_5er"></label>
-                    <input id="spieler1_5er" class="spieler1_oben" name="5er spieler 1" placeholder="5er Spieler 1"
+                    <input disabled id="spieler1_5er" class="spieler1_oben" name="5er spieler 1" placeholder="5er Spieler 1"
                         type="number" min="0" max="25">
                 </div>
                 <div class="feld border-bottom">
                     <label for="spieler1_6er"></label>
-                    <input id="spieler1_6er" class="spieler1_oben" name="6er spieler 1" placeholder="6er Spieler 1"
+                    <input disabled id="spieler1_6er" class="spieler1_oben" name="6er spieler 1" placeholder="6er Spieler 1"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld flex flex-center">
-                    <button id="spieler1_button_oben" onclick="ergebnis_oben('spieler1')">ausrechnen</button>
+                    <button disabled id="spieler1_button_oben">ausrechnen</button>
                 </div>
                 <div class="feld border-bottom">
                     <label for="spieler1_bonus"></label>
-                    <input id="spieler1_bonus" name="bonus spieler 1" placeholder="Bonus" type="number" min="0" max="35"
+                    <input disabled id="spieler1_bonus" name="bonus spieler 1" placeholder="Bonus" type="number" min="0" max="35"
                         readonly>
                 </div>
                 <div class="feld">
                     <label for="spieler1_pasch3"></label>
-                    <input id="spieler1_pasch3" class="spieler1_unten" name="Pasch 3 spieler 1" placeholder="Pasch 3"
+                    <input disabled id="spieler1_pasch3" class="spieler1_unten" name="Pasch 3 spieler 1" placeholder="Pasch 3"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld">
                     <label for="spieler1_pasch4"></label>
-                    <input id="spieler1_pasch4" class="spieler1_unten" name="Pasch 4 spieler 1" placeholder="Pasch 4"
+                    <input disabled id="spieler1_pasch4" class="spieler1_unten" name="Pasch 4 spieler 1" placeholder="Pasch 4"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld radio-wrapper spieler1_unten">
-                    <input type="radio" id="spieler1_fullhouse_check" name="Fullhouse spieler 1" value="25">
+                    <input disabled type="radio" id="spieler1_fullhouse_check" name="Fullhouse spieler 1" value="25">
                     <label for="spieler1_fullhouse_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler1_fullhouse_fail" name="Fullhouse spieler 1" value="0">
+                    <input disabled type="radio" id="spieler1_fullhouse_fail" name="Fullhouse spieler 1" value="0">
                     <label for="spieler1_fullhouse_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld radio-wrapper spieler1_unten">
-                    <input type="radio" id="spieler1_klStr_check" name="kleine Straße spieler 1" value="30">
+                    <input disabled type="radio" id="spieler1_klStr_check" name="kleine Straße spieler 1" value="30">
                     <label for="spieler1_klStr_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler1_klStr_fail" name="kleine Straße spieler 1" value="0">
+                    <input disabled type="radio" id="spieler1_klStr_fail" name="kleine Straße spieler 1" value="0">
                     <label for="spieler1_klStr_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld radio-wrapper spieler1_unten">
-                    <input type="radio" id="spieler1_grStr_check" name="große Straße spieler 1" value="40">
+                    <input disabled type="radio" id="spieler1_grStr_check" name="große Straße spieler 1" value="40">
                     <label for="spieler1_grStr_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler1_grStr_fail" name="große Straße spieler 1" value="0">
+                    <input disabled type="radio" id="spieler1_grStr_fail" name="große Straße spieler 1" value="0">
                     <label for="spieler1_grStr_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld radio-wrapper spieler1_unten">
-                    <input type="radio" id="spieler1_kniffel_check" name="Kniffel spieler 1" value="50">
+                    <input disabled type="radio" id="spieler1_kniffel_check" name="Kniffel spieler 1" value="50">
                     <label for="spieler1_kniffel_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler1_kniffel_fail" name="Kniffel spieler 1" value="0">
+                    <input disabled type="radio" id="spieler1_kniffel_fail" name="Kniffel spieler 1" value="0">
                     <label for="spieler1_kniffel_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld border-bottom">
                     <label for="spieler1_chance"></label>
-                    <input id="spieler1_chance" class="spieler1_unten" name="Chance spieler 1" placeholder="Chance"
+                    <input disabled id="spieler1_chance" class="spieler1_unten" name="Chance spieler 1" placeholder="Chance"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld flex flex-center">
-                    <button id="spieler1_button" onclick="ergebnisSpieler('spieler1')">ausrechnen</button>
+                    <button disabled id="spieler1_button">ausrechnen</button>
                 </div>
             </div>
             <div class="flex flex-col spieler border-bottom">
                 <div class="feld border-bottom bold">
                     <label for="spieler2"></label>
-                    <input onblur="setPlaceholder('spieler2')" id="spieler2" name="spieler 2 Name"
+                    <input disabled onblur="setPlaceholder('spieler2')" id="spieler2" name="spieler 2 Name"
                         placeholder="Spieler 2 Name" type="text">
                 </div>
                 <div class="feld">
                     <label for="spieler2_1er"></label>
-                    <input id="spieler2_1er" class="spieler2_oben" name="1er spieler 2" placeholder="1er Spieler 2"
+                    <input disabled id="spieler2_1er" class="spieler2_oben" name="1er spieler 2" placeholder="1er Spieler 2"
                         type="number" min="0" max="5">
                 </div>
                 <div class="feld">
                     <label for="spieler2_2er"></label>
-                    <input id="spieler2_2er" class="spieler2_oben" name="2er spieler 2" placeholder="2er Spieler 2"
+                    <input disabled id="spieler2_2er" class="spieler2_oben" name="2er spieler 2" placeholder="2er Spieler 2"
                         type="number" min="0" max="10">
                 </div>
                 <div class="feld">
                     <label for="spieler2_3er"></label>
-                    <input id="spieler2_3er" class="spieler2_oben" name="3er spieler 2" placeholder="3er Spieler 2"
+                    <input disabled id="spieler2_3er" class="spieler2_oben" name="3er spieler 2" placeholder="3er Spieler 2"
                         type="number" min="0" max="15">
                 </div>
                 <div class="feld">
                     <label for="spieler2_4er"></label>
-                    <input id="spieler2_4er" class="spieler2_oben" name="4er spieler 2" placeholder="4er Spieler 2"
+                    <input disabled id="spieler2_4er" class="spieler2_oben" name="4er spieler 2" placeholder="4er Spieler 2"
                         type="number" min="0" max="20">
                 </div>
                 <div class="feld">
                     <label for="spieler2_5er"></label>
-                    <input id="spieler2_5er" class="spieler2_oben" name="5er spieler 2" placeholder="5er Spieler 2"
+                    <input disabled id="spieler2_5er" class="spieler2_oben" name="5er spieler 2" placeholder="5er Spieler 2"
                         type="number" min="0" max="25">
                 </div>
                 <div class="feld border-bottom">
                     <label for="spieler2_6er"></label>
-                    <input id="spieler2_6er" class="spieler2_oben" name="6er spieler 2" placeholder="6er Spieler 2"
+                    <input disabled id="spieler2_6er" class="spieler2_oben" name="6er spieler 2" placeholder="6er Spieler 2"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld flex flex-center">
-                    <button id="spieler2_button_oben" onclick="ergebnis_oben('spieler2')">ausrechnen</button>
+                    <button disabled id="spieler2_button_oben">ausrechnen</button>
                 </div>
                 <div class="feld border-bottom">
                     <label for="spieler2_bonus"></label>
-                    <input id="spieler2_bonus" name="bonus spieler 1" placeholder="Bonus" type="number" min="0" max="35"
+                    <input disabled id="spieler2_bonus" name="bonus spieler 1" placeholder="Bonus" type="number" min="0" max="35"
                         readonly>
                 </div>
                 <div class="feld">
                     <label for="spieler2_pasch3"></label>
-                    <input id="spieler2_pasch3" class="spieler2_unten" name="Pasch 3 spieler 2" placeholder="Pasch 3"
+                    <input disabled id="spieler2_pasch3" class="spieler2_unten" name="Pasch 3 spieler 2" placeholder="Pasch 3"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld">
                     <label for="spieler2_pasch4"></label>
-                    <input id="spieler2_pasch4" class="spieler2_unten" name="Pasch 4 spieler 2" placeholder="Pasch 4"
+                    <input disabled id="spieler2_pasch4" class="spieler2_unten" name="Pasch 4 spieler 2" placeholder="Pasch 4"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld radio-wrapper spieler2_unten">
-                    <input type="radio" id="spieler2_fullhouse_check" name="Fullhouse spieler 2" value="25">
+                    <input disabled type="radio" id="spieler2_fullhouse_check" name="Fullhouse spieler 2" value="25">
                     <label for="spieler2_fullhouse_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler2_fullhouse_fail" name="Fullhouse spieler 2" value="0">
+                    <input disabled type="radio" id="spieler2_fullhouse_fail" name="Fullhouse spieler 2" value="0">
                     <label for="spieler2_fullhouse_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld radio-wrapper spieler2_unten">
-                    <input type="radio" id="spieler2_klStr_check" name="kleine Straße spieler 2" value="30">
+                    <input disabled type="radio" id="spieler2_klStr_check" name="kleine Straße spieler 2" value="30">
                     <label for="spieler2_klStr_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler2_klStr_fail" name="kleine Straße spieler 2" value="0">
+                    <input disabled type="radio" id="spieler2_klStr_fail" name="kleine Straße spieler 2" value="0">
                     <label for="spieler2_klStr_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld radio-wrapper spieler2_unten">
-                    <input type="radio" id="spieler2_grStr_check" name="große Straße spieler 2" value="40">
+                    <input disabled type="radio" id="spieler2_grStr_check" name="große Straße spieler 2" value="40">
                     <label for="spieler2_grStr_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler2_grStr_fail" name="große Straße spieler 2" value="0">
+                    <input disabled type="radio" id="spieler2_grStr_fail" name="große Straße spieler 2" value="0">
                     <label for="spieler2_grStr_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld radio-wrapper spieler2_unten">
-                    <input type="radio" id="spieler2_kniffel_check" name="Kniffel spieler 2" value="50">
+                    <input disabled type="radio" id="spieler2_kniffel_check" name="Kniffel spieler 2" value="50">
                     <label for="spieler2_kniffel_check">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-check" />
+                            <use href="#icon-check-disabled" />
                         </svg>
                     </label>
-                    <input type="radio" id="spieler2_kniffel_fail" name="Kniffel spieler 2" value="0">
+                    <input disabled type="radio" id="spieler2_kniffel_fail" name="Kniffel spieler 2" value="0">
                     <label for="spieler2_kniffel_fail">
                         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
-                            <use href="#icon-decline" />
+                            <use href="#icon-decline-disabled" />
                         </svg>
                     </label>
                 </div>
                 <div class="feld border-bottom">
                     <label for="spieler2_chance"></label>
-                    <input id="spieler2_chance" class="spieler2_unten" name="Chance spieler 2" placeholder="Chance"
+                    <input disabled id="spieler2_chance" class="spieler2_unten" name="Chance spieler 2" placeholder="Chance"
                         type="number" min="0" max="30">
                 </div>
                 <div class="feld flex flex-center">
-                    <button id="spieler2_button" onclick="ergebnisSpieler('spieler2')">ausrechnen</button>
+                    <button disabled id="spieler2_button">ausrechnen</button>
                 </div>
             </div>
         </div>
         <footer>© 2023 Anna-Maria Tonke</footer>
     </div>
-    <!-- svg icons -->
+    <!-- svg check icons -->
     <svg style="display: none;">
         <symbol id="icon-check">
             <svg width="64px" height="64px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -303,11 +303,26 @@
                 </g>
             </svg>
         </symbol>
+        <symbol id="icon-check-disabled">
+            <svg width="64px" height="64px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                stroke="#ccc">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g id="Interface / Check_Big">
+                        <path id="Vector" d="M4 12L8.94975 16.9497L19.5572 6.34326" stroke="#ccc" stroke-width="2.16"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </svg>
+        </symbol>
     </svg>
+    <!-- svg decline icons -->
+
     <svg style="display: none;">
-        <symbol id="icon-decline">
-            <svg width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#526d95"
-                stroke="#526d95">
+        <symbol id="icon-decline-disabled">
+            <svg width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#ccc"
+                stroke="#ccc">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -315,7 +330,7 @@
                         <style>
                             .cls-1 {
                                 fill: none;
-                                stroke: #526d95;
+                                stroke: #ccc;
                                 stroke-linecap: round;
                                 stroke-linejoin: round;
                                 stroke-width: 2.56;
@@ -328,7 +343,35 @@
                         <line class="cls-1" x1="7" x2="25" y1="25" y2="7"></line>
                     </g>
                 </g>
-            </svg> </symbol>
+            </svg> 
+        </symbol>
+    </svg>
+    <svg style="display: none;">
+        <symbol id="icon-decline">
+            <svg width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#526d95"
+                stroke="#526d95">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <defs>
+                        <style>
+                            .icon-decline {
+                                fill: none;
+                                stroke: #526d95;
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                                stroke-width: 2.56;
+                            }
+                        </style>
+                    </defs>
+                    <title></title>
+                    <g id="cross">
+                        <line class="icon-decline" x1="7" x2="25" y1="7" y2="25"></line>
+                        <line class="icon-decline" x1="7" x2="25" y1="25" y2="7"></line>
+                    </g>
+                </g>
+            </svg> 
+        </symbol>
     </svg>
 </body>
 

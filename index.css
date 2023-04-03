@@ -83,6 +83,14 @@ h3 {
   border-bottom: var(--border);
   height: 42px;
 }
+*:disabled {
+  color: grey;
+  background-color: lightgray;
+  opacity: 0.8;
+}
+*:disabled:active {
+  outline: none;
+}
 input[type="text"],
 input[type="number"] {
   padding: 12px;
@@ -99,9 +107,9 @@ input:hover:read-write {
 input:focus:read-write,
 input:focus-visible:read-write,
 input:active:read-write,
-input[type="radio"]:focus-visible ~ label,
-input[type="radio"]:focus ~ label,
-input[type="radio"]:active ~ label {
+input[type="radio"]:not(:disabled):focus-visible ~ label,
+input[type="radio"]:not(:disabled):focus ~ label,
+input[type="radio"]:not(:disabled):active ~ label {
   outline: var(--border-big);
 }
 input[type="number"] {
@@ -149,7 +157,7 @@ input[type="radio"] ~ label {
 input[type="radio"]:checked + label {
   border: var(--border);
 }
-input[type="radio"] ~ label:hover {
+input[type="radio"]:not(:disabled) ~ label:hover {
   background-color: var(--highlight);
 }
 
@@ -165,6 +173,9 @@ button {
 }
 button:hover {
   background-color: #00dca5;
+}
+button:disabled:hover {
+  background-color: lightgrey;
 }
 button:focus,
 button:focus-visible,
