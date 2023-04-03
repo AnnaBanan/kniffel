@@ -116,6 +116,15 @@ function addPlayer() {
       <button id="spieler${spielerAnzahl}_button" onclick="ergebnisSpieler('spieler${spielerAnzahl}')">ausrechnen</button>
   </div>
 </div>`;
+  // remove placeholder for players
+  const playersPlaceholder = document.getElementsByClassName(
+    "spieler platzhalter"
+  );
+  while (playersPlaceholder.length > 0) {
+    playersPlaceholder[0].parentNode.removeChild(playersPlaceholder[0]);
+  }
+
+  // add new player
   const node = document.createElement("div");
   document.getElementById("players").appendChild(node);
   node.outerHTML = html;
