@@ -98,7 +98,10 @@ input:hover:read-write {
 }
 input:focus:read-write,
 input:focus-visible:read-write,
-input:active:read-write {
+input:active:read-write,
+input[type="radio"]:focus-visible ~ label,
+input[type="radio"]:focus ~ label,
+input[type="radio"]:active ~ label {
   outline: var(--border-big);
 }
 input[type="number"] {
@@ -162,6 +165,11 @@ button {
 }
 button:hover {
   background-color: #00dca5;
+}
+button:focus,
+button:focus-visible,
+button:active {
+  outline: var(--border-big);
 }
 .ergebnis {
   display: block;
