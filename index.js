@@ -117,18 +117,23 @@ function addPlayer() {
   </div>
 </div>`;
   // remove placeholder for players
-  const playersPlaceholder = document.getElementsByClassName(
-    "spieler platzhalter"
-  );
-  while (playersPlaceholder.length > 0) {
-    playersPlaceholder[0].parentNode.removeChild(playersPlaceholder[0]);
-  }
+  let playersPlaceholder = document.getElementById("platzhalter");
+  playersPlaceholder?.classList.add("platzhalter-animation");
+  let timeoutPlaceholder;
+  let removePlaceHolder = () => {
+    playersPlaceholder.parentNode.removeChild(playersPlaceholder);
+  };
+  timeoutPlaceholder = window.setTimeout(removePlaceHolder, 500);
 
   // add new player
+  let timeoutNewPlayer;
   const node = document.createElement("div");
-  document.getElementById("players").appendChild(node);
-  node.outerHTML = html;
-  document.getElementById("neuerSpieler").value = "";
+  let newPlayer = () => {
+    document.getElementById("players").appendChild(node);
+    node.outerHTML = html;
+    document.getElementById("neuerSpieler").value = "";
+  };
+  timeoutNewPlayer = window.setTimeout(newPlayer, 150);
 }
 
 function setPlaceholder(spieler) {

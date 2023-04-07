@@ -86,10 +86,19 @@ h3 {
 *:disabled {
   color: grey;
   background-color: lightgray;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 *:disabled:active {
   outline: none;
+}
+#platzhalter {
+  transition: width 500ms;
+  width: 250px;
+}
+#platzhalter.platzhalter-animation {
+  transition-timing-function: ease-out;
+  width: 0;
+  overflow: hidden;
 }
 input[type="text"],
 input[type="number"] {
