@@ -52,56 +52,56 @@ function addPlayer() {
       <label for="spieler${spielerAnzahl}_pasch4"></label>
       <input id="spieler${spielerAnzahl}_pasch4" class="spieler${spielerAnzahl}_unten" name="Pasch 4 Spieler ${spielerAnzahl}" placeholder="Pasch 4" type="number" min="0" max="30">
   </div>
-    <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
-    <input type="radio" id="spieler${spielerAnzahl}_fullhouse_check" name="Fullhouse Spieler ${spielerAnzahl}" value="25">
+    <div class="feld checkbox-wrapper spieler${spielerAnzahl}_unten">
+    <input type="checkbox" id="spieler${spielerAnzahl}_fullhouse_check" name="Fullhouse Spieler ${spielerAnzahl}" value="25">
     <label for="spieler${spielerAnzahl}_fullhouse_check">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-check" />
         </svg>
     </label>
-    <input type="radio" id="spieler${spielerAnzahl}_fullhouse_fail" name="Fullhouse Spieler ${spielerAnzahl}" value="0">
+    <input type="checkbox" id="spieler${spielerAnzahl}_fullhouse_fail" name="Fullhouse Spieler ${spielerAnzahl}" value="0">
     <label for="spieler${spielerAnzahl}_fullhouse_fail">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-decline" />
         </svg>
     </label>
   </div>
-  <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
-    <input type="radio" id="spieler${spielerAnzahl}_klStr_check" name="kleine Straße Spieler ${spielerAnzahl}" value="30">
+  <div class="feld checkbox-wrapper spieler${spielerAnzahl}_unten">
+    <input type="checkbox" id="spieler${spielerAnzahl}_klStr_check" name="kleine Straße Spieler ${spielerAnzahl}" value="30">
     <label for="spieler${spielerAnzahl}_klStr_check">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-check" />
         </svg>
     </label>
-    <input type="radio" id="spieler${spielerAnzahl}_klStr_fail" name="kleine Straße Spieler ${spielerAnzahl}" value="0">
+    <input type="checkbox" id="spieler${spielerAnzahl}_klStr_fail" name="kleine Straße Spieler ${spielerAnzahl}" value="0">
     <label for="spieler${spielerAnzahl}_klStr_fail">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-decline" />
         </svg>
     </label>
   </div>
-  <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
-    <input type="radio" id="spieler${spielerAnzahl}_grStr_check" name="große Straße Spieler ${spielerAnzahl}" value="40">
+  <div class="feld checkbox-wrapper spieler${spielerAnzahl}_unten">
+    <input type="checkbox" id="spieler${spielerAnzahl}_grStr_check" name="große Straße Spieler ${spielerAnzahl}" value="40">
     <label for="spieler${spielerAnzahl}_grStr_check">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-check" />
         </svg>
     </label>
-    <input type="radio" id="spieler${spielerAnzahl}_grStr_fail" name="große Straße Spieler ${spielerAnzahl}" value="0">
+    <input type="checkbox" id="spieler${spielerAnzahl}_grStr_fail" name="große Straße Spieler ${spielerAnzahl}" value="0">
     <label for="spieler${spielerAnzahl}_grStr_fail">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-decline" />
         </svg>
     </label>
   </div>
-  <div class="feld radio-wrapper spieler${spielerAnzahl}_unten">
-    <input type="radio" id="spieler${spielerAnzahl}_kniffel_check" name="Kniffel Spieler ${spielerAnzahl}" value="50">
+  <div class="feld checkbox-wrapper spieler${spielerAnzahl}_unten">
+    <input type="checkbox" id="spieler${spielerAnzahl}_kniffel_check" name="Kniffel Spieler ${spielerAnzahl}" value="50">
     <label for="spieler${spielerAnzahl}_kniffel_check">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-check" />
         </svg>
     </label>
-    <input type="radio" id="spieler${spielerAnzahl}_kniffel_fail" name="Kniffel Spieler ${spielerAnzahl}" value="0">
+    <input type="checkbox" id="spieler${spielerAnzahl}_kniffel_fail" name="Kniffel Spieler ${spielerAnzahl}" value="0">
     <label for="spieler${spielerAnzahl}_kniffel_fail">
         <svg width="32" height="32" viewBox="0 0 64 64" version="2.0" stroke="#526d95">
             <use href="#icon-decline" />
@@ -131,6 +131,23 @@ function addPlayer() {
   let newPlayer = () => {
     document.getElementById("players").appendChild(node);
     node.outerHTML = html;
+
+    // only one checkbox possible inside a checkbox-wrapper
+    const checkboxWrappers = document.querySelectorAll("div.checkbox-wrapper");
+    checkboxWrappers.forEach(function (wrapper) {
+      const checkboxes = wrapper.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+          checkboxes.forEach(function (checkboxWithName) {
+            if (checkboxWithName !== this) {
+              checkboxWithName.checked = false;
+            }
+          }, this);
+        });
+      });
+    });
+
+    // empty text input for player name
     document.getElementById("neuerSpieler").value = "";
   };
   timeoutNewPlayer = window.setTimeout(newPlayer, 150);
@@ -185,12 +202,12 @@ function ergebnisSpieler(spieler) {
     }
   }
 
-  const selectedRadios = document.querySelectorAll(
-    `.${spieler}_unten input[type="radio"]:checked`
+  const selectedCheckboxes = document.querySelectorAll(
+    `.${spieler}_unten input[type="checkbox"]:checked`
   );
-  selectedRadios.forEach(function (radio) {
-    if (parseFloat(radio.value)) {
-      spielerErgebnis_unten += parseFloat(radio.value);
+  selectedCheckboxes.forEach(function (check) {
+    if (parseFloat(check.value)) {
+      spielerErgebnis_unten += parseFloat(check.value);
     }
   });
 

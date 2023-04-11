@@ -116,9 +116,9 @@ input:hover:read-write {
 input:focus:read-write,
 input:focus-visible:read-write,
 input:active:read-write,
-input[type="radio"]:not(:disabled):focus-visible ~ label,
-input[type="radio"]:not(:disabled):focus ~ label,
-input[type="radio"]:not(:disabled):active ~ label {
+input[type="checkbox"]:not(:disabled):focus-visible ~ label,
+input[type="checkbox"]:not(:disabled):focus ~ label,
+input[type="checkbox"]:not(:disabled):active ~ label {
   outline: var(--border-big);
 }
 input[type="number"] {
@@ -139,13 +139,13 @@ input::placeholder {
   text-align: center;
   font-size: 14px;
 }
-.radio-wrapper {
+.checkbox-wrapper {
   display: flex;
   gap: 6px;
   justify-content: center;
   align-items: center;
 }
-input[type="radio"] {
+input[type="checkbox"] {
   /* Add if not using autoprefixer */
   -webkit-appearance: none;
   appearance: none;
@@ -154,7 +154,7 @@ input[type="radio"] {
   /* Not removed via appearance */
   margin: 0;
 }
-input[type="radio"] ~ label {
+input[type="checkbox"] ~ label {
   border: 1px solid #fff;
   border-radius: var(--border-radius);
   display: inline-flex;
@@ -163,10 +163,10 @@ input[type="radio"] ~ label {
   align-items: center;
   justify-content: center;
 }
-input[type="radio"]:checked + label {
+input[type="checkbox"]:checked + label {
   border: var(--border);
 }
-input[type="radio"]:not(:disabled) ~ label:hover {
+input[type="checkbox"]:not(:disabled) ~ label:hover {
   background-color: var(--highlight);
 }
 
