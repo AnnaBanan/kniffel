@@ -1,0 +1,42 @@
+ul {
+  /* ul reset */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.legende {
+  font-weight: 500;
+  border: var(--border);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+.legende__item {
+  font-size: 14px;
+  width: 72px;
+  height: 42px;
+  line-height: 42px;
+  border-bottom: var(--border);
+  position: relative;
+}
+.legende__item button {
+  font-size: 100%;
+  font-family: inherit;
+  font-weight: 400;
+  text-align: left;
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+.legende__item button:hover {
+  opacity: 0.7;
+  font-weight: 700;
+}
+.legende__item:nth-child(odd) button {
+  background-color: #fff;
+}
+[role="tooltip"] {
+  display: none;
+}
+button[aria-expanded="true"] ~ [role="tooltip"] {
+  display: block;
+}

@@ -4,6 +4,16 @@ function refreshPage() {
 }
 
 function addPlayer() {
+  // remove placeholder for players
+  let playersPlaceholder = document.getElementById("platzhalter");
+  playersPlaceholder?.classList.add("platzhalter-animation");
+  let timeoutPlaceholder;
+  let removePlaceHolder = () => {
+    playersPlaceholder?.parentNode.removeChild(playersPlaceholder);
+  };
+  timeoutPlaceholder = window.setTimeout(removePlaceHolder, 500);
+
+  // get new players name
   let spielerName = document.getElementById("neuerSpieler").value;
   let spielerAnzahl =
     (document.getElementsByClassName("spieler")?.length || 0) + 1;
@@ -38,7 +48,7 @@ function addPlayer() {
       <input id="spieler${spielerAnzahl}_6er" class="spieler${spielerAnzahl}_oben" name="6er ${spielerName}" placeholder="6er ${spielerName}" type="number" min="0" max="30">
   </div>
   <div class="feld flex flex-center">
-      <button id="spieler${spielerAnzahl}_button_oben" onclick="ergebnis_oben('spieler${spielerAnzahl}')">ausrechnen</button>
+      <button class="btn" id="spieler${spielerAnzahl}_button_oben" onclick="ergebnis_oben('spieler${spielerAnzahl}')">ausrechnen</button>
   </div>
   <div class="feld border-bottom">
       <label for="spieler${spielerAnzahl}_bonus"></label>
@@ -113,17 +123,9 @@ function addPlayer() {
       <input id="spieler${spielerAnzahl}_chance" class="spieler${spielerAnzahl}_unten" name="Chance Spieler ${spielerAnzahl}" placeholder="Chance" type="number" min="0" max="30">
   </div>
   <div class="feld flex flex-center">
-      <button id="spieler${spielerAnzahl}_button" onclick="ergebnisSpieler('spieler${spielerAnzahl}')">ausrechnen</button>
+      <button class="btn" id="spieler${spielerAnzahl}_button" onclick="ergebnisSpieler('spieler${spielerAnzahl}')">ausrechnen</button>
   </div>
 </div>`;
-  // remove placeholder for players
-  let playersPlaceholder = document.getElementById("platzhalter");
-  playersPlaceholder?.classList.add("platzhalter-animation");
-  let timeoutPlaceholder;
-  let removePlaceHolder = () => {
-    playersPlaceholder.parentNode.removeChild(playersPlaceholder);
-  };
-  timeoutPlaceholder = window.setTimeout(removePlaceHolder, 500);
 
   // add new player
   let timeoutNewPlayer;

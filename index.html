@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="addplayer.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="legende.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/konfetti-32.png" />
     <link rel="icon" type="image/png" href="./assets/konfetti-32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="./assets/konfetti-96.png" sizes="96x96">
@@ -18,37 +21,40 @@
         <div class="flex header">
             <div class="flex flex-center gap-70">
                 <h1>Kniffel</h1>
-                <button onclick="refreshPage()">neues Spiel</button>
+                <button class="btn" onclick="refreshPage()">neues Spiel</button>
             </div>
             <div class="addplayer">
                 <h3>Wer spielt mit?</h3>
                 <label for="neuerSpieler"></label>
                 <input id="neuerSpieler" name="Spieler eintragen" placeholder="Spieler Name" type="text">
-                <button onclick="addPlayer()">Spieler hinzufügen</button>
+                <button class="btn" onclick="addPlayer()">Spieler hinzufügen</button>
             </div>
         </div>
         <div class="flex" id="players">
-            <div class="legende border-bottom">
-                <div class="legende__item border-bottom bold">Name</div>
-                <div class="legende__item">1er</div>
-                <div class="legende__item">2er</div>
-                <div class="legende__item">3er</div>
-                <div class="legende__item">4er</div>
-                <div class="legende__item">5er</div>
-                <div class="legende__item border-bottom">6er</div>
-                <div class="legende__item">oben</div>
-                <div class="legende__item border-bottom">Bonus</div>
-                <div class="legende__item">Pasch 3</div>
-                <div class="legende__item">Pasch 4</div>
-                <div class="legende__item">Fullhouse</div>
-                <div class="legende__item">kl Straße</div>
-                <div class="legende__item">gr Straße</div>
-                <div class="legende__item">Kniffel</div>
-                <div class="legende__item border-bottom">Chance</div>
-                <div class="legende__item ">Ergebnis</div>
-            </div>
+            <ul class="legende border-bottom">
+                <li class="legende__item border-bottom bold">Name</li>
+                <li class="legende__item">
+                    <button type="button" aria-label="mehr Information" aria-describedby="tooltip_1er" aria-expanded="false">1er</button>
+                    <span id="tooltip_1er" role="tooltip">Summe aller gewürfelten 1er</span>
+                </li>
+                <li class="legende__item">2er</li>
+                <li class="legende__item">3er</li>
+                <li class="legende__item">4er</li>
+                <li class="legende__item">5er</li>
+                <li class="legende__item border-bottom">6er</li>
+                <li class="legende__item">oben</li>
+                <li class="legende__item border-bottom">Bonus</li>
+                <li class="legende__item">Pasch 3</li>
+                <li class="legende__item">Pasch 4</li>
+                <li class="legende__item">Fullhouse</li>
+                <li class="legende__item">kl Straße</li>
+                <li class="legende__item">gr Straße</li>
+                <li class="legende__item">Kniffel</li>
+                <li class="legende__item border-bottom">Chance</li>
+                <li class="legende__item ">Ergebnis</li>
+            </ul>
             <div id="platzhalter" class="flex">
-                <div class="flex flex-col spieler border-bottom">
+                <div class="flex flex-col spieler-platzhalter border-bottom">
                     <div class="feld border-bottom bold">
                         <label for="spieler1"></label>
                         <input disabled onblur="setPlaceholder('spieler1')" id="spieler1" name="spieler 1 Name"
@@ -85,7 +91,7 @@
                             type="number" min="0" max="30">
                     </div>
                     <div class="feld flex flex-center">
-                        <button disabled id="spieler1_button_oben">ausrechnen</button>
+                        <button class="btn" disabled id="spieler1_button_oben">ausrechnen</button>
                     </div>
                     <div class="feld border-bottom">
                         <label for="spieler1_bonus"></label>
@@ -164,10 +170,10 @@
                             type="number" min="0" max="30">
                     </div>
                     <div class="feld flex flex-center">
-                        <button disabled id="spieler1_button">ausrechnen</button>
+                        <button class="btn" disabled id="spieler1_button">ausrechnen</button>
                     </div>
                 </div>
-                <div class="flex flex-col spieler border-bottom">
+                <div class="flex flex-col spieler-platzhalter border-bottom">
                     <div class="feld border-bottom bold">
                         <label for="spieler2"></label>
                         <input disabled onblur="setPlaceholder('spieler2')" id="spieler2" name="spieler 2 Name"
@@ -204,7 +210,7 @@
                             type="number" min="0" max="30">
                     </div>
                     <div class="feld flex flex-center">
-                        <button disabled id="spieler2_button_oben">ausrechnen</button>
+                        <button class="btn" disabled id="spieler2_button_oben">ausrechnen</button>
                     </div>
                     <div class="feld border-bottom">
                         <label for="spieler2_bonus"></label>
@@ -283,7 +289,7 @@
                             type="number" min="0" max="30">
                     </div>
                     <div class="feld flex flex-center">
-                        <button disabled id="spieler2_button">ausrechnen</button>
+                        <button class="btn" disabled id="spieler2_button">ausrechnen</button>
                     </div>
                 </div>
             </div>
@@ -376,5 +382,4 @@
         </symbol>
     </svg>
 </body>
-
 </html>

@@ -40,23 +40,6 @@ h3 {
   font-size: 18px;
   margin: 8px 0;
 }
-.legende {
-  font-weight: 500;
-  border: var(--border);
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
-}
-.legende__item {
-  font-size: 14px;
-  width: 72px;
-  height: 42px;
-  line-height: 42px;
-  padding-left: 8px;
-  border-bottom: var(--border);
-}
-.legende__item:nth-child(even) {
-  background-color: var(--highlight);
-}
 .flex {
   display: flex;
 }
@@ -70,12 +53,14 @@ h3 {
 .gap-70 {
   gap: 70px;
 }
-.spieler {
+.spieler,
+.spieler-platzhalter {
   max-width: 124px;
   border-top: var(--border);
   border-right: var(--border);
 }
-.spieler:last-of-type {
+.spieler:last-of-type,
+.spieler-platzhalter:last-of-type {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
@@ -139,11 +124,17 @@ input::placeholder {
   text-align: center;
   font-size: 14px;
 }
+input:not(:placeholder-shown) {
+  background-color: var(--highlight);
+}
 .checkbox-wrapper {
   display: flex;
   gap: 6px;
   justify-content: center;
   align-items: center;
+}
+.checkbox-wrapper:has(input[type="checkbox"]:checked) {
+  background-color: var(--highlight);
 }
 input[type="checkbox"] {
   /* Add if not using autoprefixer */
@@ -170,7 +161,7 @@ input[type="checkbox"]:not(:disabled) ~ label:hover {
   background-color: var(--highlight);
 }
 
-button {
+button.btn {
   padding: 9px;
   border: 0;
   border-radius: 999px;
@@ -180,15 +171,15 @@ button {
   color: #333;
   background-color: var(--button-color);
 }
-button:hover {
+button.btn:hover {
   background-color: #00dca5;
 }
-button:disabled:hover {
+button.btn:disabled:hover {
   background-color: lightgrey;
 }
-button:focus,
-button:focus-visible,
-button:active {
+button.btn:focus,
+button.btn:focus-visible,
+button.btn:active {
   outline: var(--border-big);
 }
 .ergebnis {
