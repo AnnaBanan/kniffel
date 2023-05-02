@@ -2,7 +2,13 @@
 function refreshPage() {
   window.location.reload();
 }
-
+// onkeypress add Player via Input
+function handleAddPlayer(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault(); // verhindert das Standardverhalten der Enter-Taste
+    addPlayer();
+  }
+}
 function addPlayer() {
   // remove placeholder for players
   let playersPlaceholder = document.getElementById("platzhalter");
@@ -153,6 +159,12 @@ function addPlayer() {
     document.getElementById("neuerSpieler").value = "";
   };
   timeoutNewPlayer = window.setTimeout(newPlayer, 150);
+}
+
+function toggleTooltip(event) {
+  const tooltipElement = event.target.nextElementSibling;
+  tooltipElement.classList.toggle("visible");
+  tooltipElement.classList.toggle("invisible");
 }
 
 function setPlaceholder(spieler) {
