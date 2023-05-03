@@ -1,6 +1,10 @@
 "use strict";
+// Fokus auf das Texteingabefeld setzen, sobald die Seite vollständig geladen ist
+window.onload = function () {
+  document.getElementById("neuerSpieler").focus();
+};
 function refreshPage() {
-  window.location.reload();
+  location.reload(); // Seite neu laden
 }
 // onkeypress add Player via Input
 function handleAddPlayer(event) {
