@@ -26,14 +26,15 @@ ul {
   font-family: inherit;
   font-weight: 400;
   text-align: left;
+  background-color: #d8f6ec;
   border: 0;
   height: 100%;
   width: 100%;
   padding-left: 8px;
 }
 .legende__item button:hover {
-  opacity: 0.7;
   font-weight: 700;
+  background-color: #bef6e2;
 }
 .legende__item:nth-child(odd) button {
   background-color: #fff;

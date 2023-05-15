@@ -101,10 +101,11 @@ input:hover:read-write {
 input:focus:read-write,
 input:focus-visible:read-write,
 input:active:read-write,
-input[type="checkbox"]:not(:disabled):focus-visible ~ label,
-input[type="checkbox"]:not(:disabled):focus ~ label,
-input[type="checkbox"]:not(:disabled):active ~ label {
+input[type="checkbox"]:not(:disabled):focus-visible + label,
+input[type="checkbox"]:not(:disabled):focus + label,
+input[type="checkbox"]:not(:disabled):active + label {
   outline: var(--border-big);
+  outline-offset: -2px;
 }
 input[type="number"] {
   -webkit-appearance: textfield;
@@ -160,7 +161,9 @@ input[type="checkbox"]:checked + label {
 input[type="checkbox"]:not(:disabled) ~ label:hover {
   background-color: var(--highlight);
 }
-
+button:not(:disabled) {
+  cursor: pointer;
+}
 button.btn {
   padding: 9px;
   border: 0;
@@ -177,10 +180,9 @@ button.btn:hover {
 button.btn:disabled:hover {
   background-color: lightgrey;
 }
-button.btn:focus,
-button.btn:focus-visible,
-button.btn:active {
+button:focus-visible {
   outline: var(--border-big);
+  outline-offset: 1px;
 }
 .ergebnis {
   display: block;
