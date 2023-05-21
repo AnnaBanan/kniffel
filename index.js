@@ -166,9 +166,37 @@ function addPlayer() {
 }
 
 function toggleTooltip(event) {
+  const tooltipSpan = event.target.nextElementSibling;
+  const tooltipButton = event.target;
+  console.log(tooltipButton);
+
+  // toggle class for animation FIX THIS LATER!!!
+  setTimeout(function () {
+    tooltipSpan.classList.toggle("visible");
+  }, 10);
+  tooltipSpan.classList.toggle("invisible");
+
+  // toggle attributes for a11y
+  if (tooltipSpan.getAttributeNode("hidden")) {
+    tooltipSpan.attributes.removeNamedItem("hidden");
+    tooltipButton.setAttribute("aria-expanded", "true");
+    tooltipSpan.setAttribute("aria-live", "polite");
+  } else {
+    setTimeout(function () {
+      tooltipSpan.setAttribute("hidden", "true");
+    }, 800);
+    tooltipButton.setAttribute("aria-expanded", "false");
+    tooltipSpan.removeAttribute("aria-live");
+  }
+}
+
+function closeTooltip(event) {
   const tooltipElement = event.target.nextElementSibling;
-  tooltipElement.classList.toggle("visible");
-  tooltipElement.classList.toggle("invisible");
+  console.log(tooltipElement.classList.value);
+  if ((tooltipElement.classList.value = "visible")) {
+    tooltipElement.classList.remove("visible");
+    tooltipElement.classList.add("invisible");
+  }
 }
 
 function setPlaceholder(spieler) {

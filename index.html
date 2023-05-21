@@ -55,31 +55,333 @@
             <button
               type="button"
               onclick="toggleTooltip(event)"
-              aria-label="mehr Information"
-              aria-describedby="tooltip_1er"
+              onblur="closeTooltip(event)"
+              id="tooltip_1er_button"
+              aria-label="1er, klicke für mehr Information"
+              aria-describedby="tooltip_1er_text"
               aria-expanded="false"
             >
               1er
             </button>
-            <span id="tooltip_1er" role="tooltip" class="invisible"
-              >Summe aller gewürfelten 1er</span
+            <span
+              id="tooltip_1er_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die "
             >
+              Summe aller gewürfelten 1er
+            </span>
           </li>
-          <li class="legende__item">2er</li>
-          <li class="legende__item">3er</li>
-          <li class="legende__item">4er</li>
-          <li class="legende__item">5er</li>
-          <li class="legende__item border-bottom">6er</li>
-          <li class="legende__item">oben</li>
-          <li class="legende__item border-bottom">Bonus</li>
-          <li class="legende__item">Pasch 3</li>
-          <li class="legende__item">Pasch 4</li>
-          <li class="legende__item">Fullhouse</li>
-          <li class="legende__item">kl Straße</li>
-          <li class="legende__item">gr Straße</li>
-          <li class="legende__item">Kniffel</li>
-          <li class="legende__item border-bottom">Chance</li>
-          <li class="legende__item">Ergebnis</li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_2er_button"
+              aria-label="2er, klicke für mehr Information"
+              aria-describedby="tooltip_2er_text"
+              aria-expanded="false"
+            >
+              2er
+            </button>
+            <span
+              id="tooltip_2er_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die "
+            >
+              Summe aller gewürfelten 2er
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_3er_button"
+              aria-label="3er, klicke für mehr Information"
+              aria-describedby="tooltip_3er_text"
+              aria-expanded="false"
+            >
+              3er
+            </button>
+            <span
+              id="tooltip_3er_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die "
+            >
+              Summe aller gewürfelten 3er
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_4er_button"
+              aria-label="4er, klicke für mehr Information"
+              aria-describedby="tooltip_4er_text"
+              aria-expanded="false"
+            >
+              4er
+            </button>
+            <span
+              id="tooltip_4er_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die "
+            >
+              Summe aller gewürfelten 4er
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_5er_button"
+              aria-label="5er, klicke für mehr Information"
+              aria-describedby="tooltip_5er_text"
+              aria-expanded="false"
+            >
+              5er
+            </button>
+            <span
+              id="tooltip_5er_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die "
+            >
+              Summe aller gewürfelten 5er
+            </span>
+          </li>
+          <li class="legende__item border-bottom">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_6er_button"
+              aria-label="6er, klicke für mehr Information"
+              aria-describedby="tooltip_6er_text"
+              aria-expanded="false"
+            >
+              6er
+            </button>
+            <span
+              id="tooltip_6er_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die "
+            >
+              Summe aller gewürfelten 6er
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_oben_button"
+              aria-label="oben, klicke für mehr Information"
+              aria-describedby="tooltip_oben_text"
+              aria-expanded="false"
+            >
+              oben
+            </button>
+            <span
+              id="tooltip_oben_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="alle Summen der einzelnen Zahlen also"
+            >
+              Summe aller Felder oben
+            </span>
+          </li>
+          <li class="legende__item border-bottom">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_bonus_button"
+              aria-label="Bonus, klicke für mehr Information"
+              aria-describedby="tooltip_bonus_text"
+              aria-expanded="false"
+            >
+              Bonus
+            </button>
+            <span
+              id="tooltip_bonus_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es gibt "
+            >
+              35 Punkte Bonus ab 63 Punkten oben
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_pasch3_button"
+              aria-label="Pasch 3, klicke für mehr Information"
+              aria-describedby="tooltip_pasch3_text"
+              aria-expanded="false"
+            >
+              Pasch 3
+            </button>
+            <span
+              id="tooltip_pasch3_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die"
+            >
+              Summe aller Würfel, mit 3 gleichen
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_pasch4_button"
+              aria-label="Pasch 4, klicke für mehr Information"
+              aria-describedby="tooltip_pasch4_text"
+              aria-expanded="false"
+            >
+              Pasch 4
+            </button>
+            <span
+              id="tooltip_pasch4_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt die "
+            >
+              Summe aller Würfel, mit 4 gleichen
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_fullhouse_button"
+              aria-label="Fullhouse, klicke für mehr Information"
+              aria-describedby="tooltip_fullhouse_text"
+              aria-expanded="false"
+            >
+              Fullhouse
+            </button>
+            <span
+              id="tooltip_fullhouse_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es gibt"
+            >
+              25 Punkte bei 3 gleichen und 2 gleichen
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_klstrasse_button"
+              aria-label="Kleine Straße, klicke für mehr Information"
+              aria-describedby="tooltip_klstrasse_text"
+              aria-expanded="false"
+            >
+              kl Straße
+            </button>
+            <span
+              id="tooltip_klstrasse_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es gibt"
+            >
+              30 Punkte bei 4er Reihung
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_grstrasse_button"
+              aria-label="Große Straße, klicke für mehr Information"
+              aria-describedby="tooltip_grstrasse_text"
+              aria-expanded="false"
+            >
+              gr Straße
+            </button>
+            <span
+              id="tooltip_grstrasse_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es gibt"
+            >
+              40 Punkte bei 5er Reihung
+            </span>
+          </li>
+          <li class="legende__item">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_kniffel_button"
+              aria-label="Kniffel, klicke für mehr Information"
+              aria-describedby="tooltip_kniffel_text"
+              aria-expanded="false"
+            >
+              Kniffel
+            </button>
+            <span
+              id="tooltip_kniffel_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es gibt"
+            >
+              50 Punkte bei 5 gleichen
+            </span>
+          </li>
+          <li class="legende__item border-bottom">
+            <button
+              type="button"
+              onclick="toggleTooltip(event)"
+              onblur="closeTooltip(event)"
+              id="tooltip_chance_button"
+              aria-label="Chance, klicke für mehr Information"
+              aria-describedby="tooltip_chance_text"
+              aria-expanded="false"
+            >
+              Chance
+            </button>
+            <span
+              id="tooltip_chance_text"
+              role="tooltip"
+              class="invisible"
+              hidden="true"
+              aria-label="Es zählt"
+            >
+              Summe aller Würfel
+            </span>
+          </li>
+          <li class="legende__item"><span>Ergebnis</span></li>
         </ul>
         <div id="platzhalter" class="flex">
           <div class="flex flex-col spieler-platzhalter border-bottom">
